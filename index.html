@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FocusFlow</title>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <!-- FLOATING BACKGROUND ICONS -->
+    <div class="floating-icons">
+
+        <div class="icon icon1">
+            <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 19c0-1.1.9-2 2-2h14" stroke-width="2" />
+                <path d="M6 3h14v18H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" stroke-width="2" />
+            </svg>
+        </div>
+
+        <div class="icon icon2">
+            <svg viewBox="0 0 24 24" fill="none">
+                <path d="M9 3a4 4 0 0 0-4 4v1a3 3 0 0 0 0 6v1a4 4 0 0 0 4 4" stroke-width="2" />
+                <path d="M15 3a4 4 0 0 1 4 4v1a3 3 0 0 1 0 6v1a4 4 0 0 1-4 4" stroke-width="2" />
+            </svg>
+        </div>
+
+        <div class="icon icon3">
+            <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="9" stroke-width="2" />
+                <path d="M12 7v5l3 3" stroke-width="2" />
+            </svg>
+        </div>
+
+    </div>
+
+    <!-- HEADER -->
+    <header class="navbar">
+
+        <div class="logo">
+
+            <div class="icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" stroke-width="2" />
+                    <path d="M14 2v6h6" stroke-width="2" />
+                </svg>
+            </div>
+
+            <div class="logo-text">
+                <span class="to">Focus</span><span class="do">Flow</span>
+            </div>
+
+        </div>
+
+        <nav class="header-nav">
+            <a href="#about" class="nav-link">About Us</a>
+            <a href="#faq" class="nav-link">FAQs</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+            <h1>
+                Organize your life with <br>
+                <span class="highlight">FocusFlow.</span>
+            </h1>
+
+            <p class="hero-sub">
+                Manage tasks, stay focused with Pomodoro, and track your productivity — all in one place.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="todo.html" class="primary-btn">Get Started</a>
+                <a href="schedule.html" class="secondary-btn">Try Schedule Organizer</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="homeimage.png" alt="FocusFlow productivity illustration" />
+        </div>
+
+    </section>
+
+    <section class="page-wrapper">
+        <div class="tp-root">
+
+            <!-- STAR RATING -->
+            <div class="tp-stars">
+                <svg class="tp-star" viewBox="0 0 15 15" aria-hidden="true">
+                    <polygon points="7.5,1 9.5,5.5 14.5,6 11,9.5 12,14.5 7.5,12 3,14.5 4,9.5 0.5,6 5.5,5.5" />
+                </svg>
+                <svg class="tp-star" viewBox="0 0 15 15" aria-hidden="true">
+                    <polygon points="7.5,1 9.5,5.5 14.5,6 11,9.5 12,14.5 7.5,12 3,14.5 4,9.5 0.5,6 5.5,5.5" />
+                </svg>
+                <svg class="tp-star" viewBox="0 0 15 15" aria-hidden="true">
+                    <polygon points="7.5,1 9.5,5.5 14.5,6 11,9.5 12,14.5 7.5,12 3,14.5 4,9.5 0.5,6 5.5,5.5" />
+                </svg>
+                <svg class="tp-star" viewBox="0 0 15 15" aria-hidden="true">
+                    <polygon points="7.5,1 9.5,5.5 14.5,6 11,9.5 12,14.5 7.5,12 3,14.5 4,9.5 0.5,6 5.5,5.5" />
+                </svg>
+                <svg class="tp-star" viewBox="0 0 15 15" aria-hidden="true">
+                    <polygon points="7.5,1 9.5,5.5 14.5,6 11,9.5 12,14.5 7.5,12 3,14.5 4,9.5 0.5,6 5.5,5.5" />
+                </svg>
+            </div>
+
+            <!-- HEADING -->
+            <h2 class="tp-heading">
+                Trusted by <em>1,200 people</em> worldwide
+            </h2>
+
+            <!-- AVATAR ROW -->
+            <div class="tp-avatar-row" role="img" aria-label="Profile pictures of 5 customers and a +1.2k badge">
+
+                <div class="tp-avatar" title="Sarah K.">
+                    <svg viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="54" height="54" fill="#f5d9c0" />
+                        <circle cx="27" cy="20" r="9" fill="#c8845a" />
+                        <ellipse cx="27" cy="44" rx="14" ry="11" fill="#c8845a" />
+                    </svg>
+                </div>
+
+                <div class="tp-avatar" title="Marcus T.">
+                    <svg viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="54" height="54" fill="#dde8f5" />
+                        <circle cx="27" cy="20" r="9" fill="#3a6ea8" />
+                        <ellipse cx="27" cy="44" rx="14" ry="11" fill="#3a6ea8" />
+                        <circle cx="27" cy="18" r="5" fill="#f5d9b0" />
+                    </svg>
+                </div>
+
+                <div class="tp-avatar" title="Priya M.">
+                    <svg viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="54" height="54" fill="#e8f0de" />
+                        <circle cx="27" cy="20" r="9" fill="#5a7a3a" />
+                        <ellipse cx="27" cy="44" rx="14" ry="11" fill="#5a7a3a" />
+                        <circle cx="27" cy="18" r="5" fill="#d4a870" />
+                        <ellipse cx="27" cy="13" rx="5.5" ry="3" fill="#3a2a1a" />
+                    </svg>
+                </div>
+
+                <div class="tp-avatar" title="Lena R.">
+                    <svg viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="54" height="54" fill="#fde8e0" />
+                        <circle cx="27" cy="20" r="9" fill="#d4604a" />
+                        <ellipse cx="27" cy="44" rx="14" ry="11" fill="#d4604a" />
+                        <circle cx="27" cy="18" r="5" fill="#f5c8a8" />
+                        <ellipse cx="27" cy="12" rx="7" ry="4" fill="#8a2a1a" />
+                    </svg>
+                </div>
+
+                <div class="tp-avatar" title="James O.">
+                    <svg viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="54" height="54" fill="#e8e4f4" />
+                        <circle cx="27" cy="20" r="9" fill="#5a4a9a" />
+                        <ellipse cx="27" cy="44" rx="14" ry="11" fill="#5a4a9a" />
+                        <circle cx="27" cy="18" r="5" fill="#c8a87a" />
+                        <ellipse cx="27" cy="12" rx="6" ry="3.5" fill="#2a1a5a" />
+                    </svg>
+                </div>
+
+                <div class="tp-badge" title="1,200+ brands">
+                    <span class="tp-badge-text">+1.2k</span>
+                </div>
+
+            </div>
+
+            <!-- SUBTEXT -->
+            <p class="tp-sub">
+                Join <strong>1,200+ people</strong> who ship faster and work smarter.<br>
+                Free Of Cost.
+            </p>
+
+        </div>
+    </section>
+
+    <section class="stats">
+
+        <div class="stat">
+            <h2 class="count" data-target="10">0</h2>
+            <p>Powerful Features</p>
+        </div>
+
+        <div class="stat">
+            <h2 class="count" data-target="1000">0</h2>
+            <p>Tasks Managed</p>
+        </div>
+
+        <div class="stat">
+            <h2 class="count" data-target="500">0</h2>
+            <p>Active Users</p>
+        </div>
+
+    </section>
+
+    <section class="about" id="about">
+
+        <h2>About Us</h2>
+
+        <p>
+            FocusFlow is built to simplify the way you manage your day.
+            In a world full of distractions, we bring everything you need into one focused space
+            — from organizing tasks to improving concentration
+            with Pomodoro sessions and tracking your time effectively.
+            Our goal is to help you stay consistent, reduce overwhelm,
+            and make productivity feel effortless. Whether you're a student,
+            developer, or professional, ToDo adapts to your workflow and helps
+            you get things done with clarity and control.
+        </p>
+
+    </section>
+
+
+    <section class="features">
+
+        <h2>Features</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="icon">📝</div>
+                <h3>Task Management</h3>
+                <p>Organize your daily tasks, set priorities, and stay on top of your goals.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">⏳</div>
+                <h3>Pomodoro Focus</h3>
+                <p>Boost productivity with timed focus sessions and structured breaks.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">⏱</div>
+                <h3>Smart Timer</h3>
+                <p>Track time efficiently and manage your workflow with ease.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">📅</div>
+                <h3>Daily Planning</h3>
+                <p>Plan your day efficiently with structured tasks.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">📌</div>
+                <h3>Prioritization</h3>
+                <p>Focus on what matters most with priority tasks.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🧠</div>
+                <h3>Focus Mode</h3>
+                <p>Eliminate distractions and stay fully concentrated.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">📈</div>
+                <h3>Performance Insights</h3>
+                <p>Analyze your productivity and improve daily.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h3>Secure Data</h3>
+                <p>Your tasks and data stay safe and private.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon">🌙</div>
+                <h3>Dark Mode</h3>
+                <p>Work comfortably with a sleek dark theme.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+
+        <h2>What Users Say</h2>
+
+        <div class="carousel">
+
+            <div class="carousel-track">
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"This app completely changed how I manage my daily tasks."</p>
+                    <h4>— Rahul Sharma</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★☆☆</div>
+                    <p>"The Pomodoro feature keeps me focused for hours."</p>
+                    <h4>— Priya Verma</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>"Minimal design, powerful features. Love it!"</p>
+                    <h4>— Aman Gupta</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Simple, fast, and actually useful. Helps me stay consistent every day."</p>
+                    <h4>— Neha Singh</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>"I love how everything is in one place — tasks, timer, and focus."</p>
+                    <h4>— Arjun Mehta</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Clean design and smooth experience. Makes productivity enjoyable."</p>
+                    <h4>— Kavya Nair</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>"Pomodoro feature is a game changer for my study sessions."</p>
+                    <h4>— Rohit Kumar</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Exactly what I needed to stay organized and focused."</p>
+                    <h4>— Sneha Patel</h4>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>"Lightweight and powerful. Works perfectly for daily planning."</p>
+                    <h4>— Vikram Joshi</h4>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="faq" id="faq">
+
+        <h2>FAQs</h2>
+
+        <div class="faq-container">
+
+            <div class="faq-item">
+                <button class="faq-question">What is ToDo?</button>
+                <div class="faq-answer">
+                    <p>ToDo is a productivity app that helps you manage tasks, focus using Pomodoro, and track your time
+                        efficiently.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Is it free to use?</button>
+                <div class="faq-answer">
+                    <p>Yes, ToDo is completely free to use with all essential features included.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Can I use it on mobile?</button>
+                <div class="faq-answer">
+                    <p>Absolutely! The app is fully responsive and works smoothly on all devices.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Does it save my data?</button>
+                <div class="faq-answer">
+                    <p>Your tasks are stored securely and can be extended with local storage or backend integration.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="ask" id="contact">
+
+        <h2>Still have questions?</h2>
+        <p>Feel free to reach out — we're here to help you stay productive.</p>
+
+        <div class="ask-box">
+            <input type="text" id="questionInput" placeholder="Type your question..." />
+            <button onclick="sendQuestion()">Send</button>
+        </div>
+
+    </section>
+
+    <div id="popup" class="popup"></div>
+
+    <!-- ── AI FLOATING BUTTON ── -->
+    <button class="ai-float-btn" id="aiFloatBtn" title="Open AI Scheduler">
+        <span class="ai-float-icon">✦</span>
+        <span class="ai-float-label">AI Scheduler</span>
+        <span class="ai-float-ping"></span>
+    </button>
+
+    <!-- ── AI POPUP MODAL ── -->
+    <div class="ai-popup-overlay" id="aiPopupOverlay">
+        <div class="ai-popup" id="aiPopup">
+
+            <!-- POPUP HEADER -->
+            <div class="ai-popup-header">
+                <div class="ai-popup-brand">
+                    <div class="ai-popup-icon">✦</div>
+                    <div>
+                        <div class="ai-popup-title">AI Schedule Manager</div>
+                        <div class="ai-popup-subtitle">Powered by FocusFlow AI</div>
+                    </div>
+                </div>
+                <div class="ai-popup-header-right">
+                    <div class="ai-popup-status">
+                        <div class="ai-status-dot"></div>
+                        Online
+                    </div>
+                    <button class="ai-popup-close" id="aiPopupClose">✕</button>
+                </div>
+            </div>
+
+            <!-- QUICK ACTIONS -->
+            <div class="ai-popup-actions">
+                <button class="ai-popup-chip primary" data-msg="Auto plan my day with tasks, deep work blocks, and breaks">✦ Auto Plan Day</button>
+                <button class="ai-popup-chip" data-msg="Optimize my existing schedule for maximum focus">⚡ Optimize</button>
+                <button class="ai-popup-chip" data-msg="Add a 25-min deep focus block to my schedule">🎯 Focus Block</button>
+                <button class="ai-popup-chip" data-msg="Check my schedule for any conflicts or overloads">⚠ Check Conflicts</button>
+            </div>
+
+            <!-- CHAT AREA -->
+            <div class="ai-popup-chat" id="aiPopupChat"></div>
+
+            <!-- INPUT -->
+            <div class="ai-popup-input-wrap">
+                <textarea
+                    class="ai-popup-input"
+                    id="aiPopupInput"
+                    rows="1"
+                    placeholder="Ask me to plan, optimize, or schedule…"
+                ></textarea>
+                <button class="ai-popup-send" id="aiPopupSend">
+                    <svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2.5 10L17.5 2.5 11.5 10 17.5 17.5z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- FOOTER LINK -->
+            <div class="ai-popup-footer">
+                <a href="schedule.html" class="ai-popup-full-link">
+                    Open Full Schedule Manager →
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="ai-popup.js"></script>
+
+    <footer class="footer">
+        <p>@FocusFlow</p>
+        <p>Made With ❤️ By Piyush</p>
+        <div class="socials">
+            <a href="https://linkedin.com/in/piyusharyan5" target="_blank">🔗LinkedIn</a>
+            <a href="https://github.com/piyusharyan5" target="_blank">💻GitHub</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

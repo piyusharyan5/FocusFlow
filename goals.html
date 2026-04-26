@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FocusFlow — Goals</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="goals.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Focus<span>Flow</span></div>
+  <div class="nav-tabs">
+   <a href="todo.html" class="nav-tab active">To-Do</a>
+<a href="pomodoro.html" class="nav-tab">Pomodoro</a>
+<a href="goals.html" class="nav-tab">Goals</a>
+<a href="schedule.html" class="nav-tab">Schedule</a>
+  </div>
+  <div class="nav-avatar">AK</div>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div>
+      <div class="heading-group">
+        <h1 class="page-title">Goals</h1>
+        <div class="title-accent"></div>
+      </div>
+      <p class="page-subtitle">Track what matters. One step at a time.</p>
+    </div>
+    <button class="btn-primary" onclick="openModal()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      New Goal
+    </button>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-number" id="stat-total">0</div>
+      <div class="stat-label">Total Goals</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="stat-active">0</div>
+      <div class="stat-label">In Progress</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" id="stat-done">0</div>
+      <div class="stat-label">Completed</div>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filter-row">
+    <button class="filter-chip active" onclick="filterGoals('all', this)">All</button>
+    <button class="filter-chip" onclick="filterGoals('active', this)">In Progress</button>
+    <button class="filter-chip" onclick="filterGoals('completed', this)">Completed</button>
+    <button class="filter-chip" onclick="filterGoals('near', this)">🔥 Nearly done</button>
+  </div>
+
+  <!-- GOALS LIST -->
+  <div class="goals-list" id="goalsList"></div>
+
+  <!-- EMPTY STATE -->
+  <div class="empty-state" id="emptyState">
+    <svg class="empty-illus" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="54" fill="#fff0e6" opacity="0.8"/>
+      <circle cx="60" cy="60" r="38" fill="#ffd9ba" opacity="0.6"/>
+      <path d="M38 62 Q60 35 82 62" stroke="#ff6b00" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.4"/>
+      <circle cx="60" cy="66" r="14" fill="none" stroke="#ff6b00" stroke-width="2.5" opacity="0.6"/>
+      <circle cx="60" cy="66" r="4" fill="#ff6b00" opacity="0.7"/>
+      <line x1="60" y1="46" x2="60" y2="38" stroke="#ff6b00" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+      <line x1="60" y1="38" x2="64" y2="33" stroke="#ff6b00" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <line x1="60" y1="38" x2="56" y2="33" stroke="#ff6b00" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+    </svg>
+    <div class="empty-title">No goals yet</div>
+    <p class="empty-sub">Set your first goal and start building the life you want, one milestone at a time.</p>
+    <button class="btn-primary" style="margin-top:1.5rem" onclick="openModal()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      Create a Goal
+    </button>
+  </div>
+
+  <!-- ARCHIVE -->
+  <div class="archive-section" id="archiveSection" style="display:none">
+    <button class="archive-toggle" id="archiveToggle" onclick="toggleArchive()">
+      <span class="archive-caret">▶</span>
+      Archived Goals (<span id="archiveCount">0</span>)
+    </button>
+    <div class="archived-list goals-list" id="archivedList"></div>
+  </div>
+
+</main>
+
+<!-- ADD GOAL MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">New Goal</div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Goal Title *</label>
+      <input class="form-input" id="inputTitle" placeholder="e.g. Learn Java, Run a 5K…" maxlength="60">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Pick an Icon</label>
+      <div class="emoji-picker" id="emojiPicker">
+        <div class="emoji-opt selected" data-emoji="🎯" onclick="selectEmoji(this)">🎯</div>
+        <div class="emoji-opt" data-emoji="📚" onclick="selectEmoji(this)">📚</div>
+        <div class="emoji-opt" data-emoji="💪" onclick="selectEmoji(this)">💪</div>
+        <div class="emoji-opt" data-emoji="🏃" onclick="selectEmoji(this)">🏃</div>
+        <div class="emoji-opt" data-emoji="💡" onclick="selectEmoji(this)">💡</div>
+        <div class="emoji-opt" data-emoji="🎨" onclick="selectEmoji(this)">🎨</div>
+        <div class="emoji-opt" data-emoji="🌱" onclick="selectEmoji(this)">🌱</div>
+        <div class="emoji-opt" data-emoji="🚀" onclick="selectEmoji(this)">🚀</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Total Tasks</label>
+        <input class="form-input" id="inputTotal" type="number" min="1" max="100" value="10" placeholder="10">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Deadline</label>
+        <input class="form-input" id="inputDeadline" type="date">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Description (optional)</label>
+      <textarea class="form-textarea" id="inputDesc" placeholder="What's this goal about?"></textarea>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+      <button class="btn-primary" onclick="addGoal()">Create Goal</button>
+    </div>
+  </div>
+</div>
+
+<script src="goals.js"></script>
+</body>
+</html>

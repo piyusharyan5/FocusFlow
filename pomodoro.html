@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusFlow — Pomodoro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="pomodoro.css" />
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Focus<span>Flow</span></div>
+    <div class="nav-right">
+      <div class="nav-tabs">
+       <a href="todo.html" class="nav-tab">To-Do</a>
+<a href="pomodoro.html" class="nav-tab active">Pomodoro</a>
+<a href="goals.html" class="nav-tab">Goals</a>
+<a href="schedule.html" class="nav-tab">Schedule</a>
+      </div>
+      <button class="theme-toggle" id="themeBtn" title="Toggle dark mode">☽</button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="glass-card">
+
+      <!-- MODE TABS -->
+      <div class="mode-tabs">
+        <button class="mode-tab active" data-mode="focus">Focus</button>
+        <button class="mode-tab" data-mode="short">Short Break</button>
+        <button class="mode-tab" data-mode="long">Long Break</button>
+      </div>
+
+      <!-- CIRCULAR TIMER -->
+      <div class="timer-wrap">
+        <div class="pulse-circle" id="pulseCircle"></div>
+        <svg class="timer-svg" width="240" height="240" viewBox="0 0 240 240">
+          <defs>
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff6b00"/>
+              <stop offset="100%" stop-color="#ffcc44"/>
+            </linearGradient>
+          </defs>
+          <circle class="ring-track" cx="120" cy="120" r="108"/>
+          <circle class="ring-progress" id="ringProgress" cx="120" cy="120" r="108"
+            stroke-dasharray="678.6" stroke-dashoffset="0"/>
+        </svg>
+        <div class="timer-center">
+          <div class="timer-display" id="timerDisplay">25:00</div>
+          <div class="timer-label" id="timerLabel">Focus</div>
+        </div>
+      </div>
+
+      <!-- MOTIVATIONAL TEXT -->
+      <div class="motive-text" id="motiveText">Ready to enter deep focus?</div>
+
+      <!-- CURRENT TASK -->
+      <div class="current-task">
+        <div class="task-dot"></div>
+        <div class="task-info">
+          <div class="task-text-label">Working on</div>
+          <div class="task-name" id="currentTaskName">Design the new onboarding flow</div>
+        </div>
+        <button class="task-edit" id="taskEditBtn">Edit</button>
+      </div>
+
+      <!-- CONTROLS -->
+      <div class="controls">
+        <button class="btn-reset" id="resetBtn" title="Reset">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="1 4 1 10 7 10"/>
+            <path d="M3.51 15a9 9 0 1 0 .49-4.5"/>
+          </svg>
+        </button>
+
+        <button class="btn-main" id="mainBtn">
+          <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5,3 19,12 5,21"/>
+          </svg>
+          <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+            <rect x="6" y="4" width="4" height="16" rx="1"/>
+            <rect x="14" y="4" width="4" height="16" rx="1"/>
+          </svg>
+        </button>
+
+        <button class="btn-skip" id="skipBtn" title="Skip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5,4 15,12 5,20"/>
+            <line x1="19" y1="4" x2="19" y2="20"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- SESSION DOTS -->
+      <div class="session-row">
+        <div class="session-label" id="sessionLabel">Session 1 of 4</div>
+        <div class="session-dots" id="sessionDots"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- TASK EDIT MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <h3>Current task</h3>
+      <input class="modal-input" id="taskInput" type="text"
+        placeholder="What are you working on?" maxlength="80" />
+      <div class="modal-btns">
+        <button class="modal-cancel" id="modalCancelBtn">Cancel</button>
+        <button class="modal-save" id="modalSaveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="pomodoro.js"></script>
+</body>
+</html>

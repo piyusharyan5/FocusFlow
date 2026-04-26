@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusFlow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <nav class="navbar">
+    <div class="logo">Focus<span>Flow</span></div>
+    <div class="nav-tabs">
+      <a href="todo.html" class="nav-tab active">To-Do</a>
+<a href="pomodoro.html" class="nav-tab">Pomodoro</a>
+<a href="goals.html" class="nav-tab">Goals</a>
+<a href="schedule.html" class="nav-tab">Schedule</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="glass-card">
+
+      <div class="section-heading">
+        <h1>To-Do List</h1>
+        <div class="heading-accent"></div>
+      </div>
+
+      <div class="input-row">
+        <input class="task-input" id="taskInput" type="text" placeholder="Add a new task..." maxlength="120" />
+        <button class="add-btn" onclick="addTask()">+ Add</button>
+      </div>
+
+      <div class="filters" id="filters">
+        <button class="filter-pill active" data-filter="all" onclick="setFilter(this)">All</button>
+        <button class="filter-pill" data-filter="pending" onclick="setFilter(this)">Pending</button>
+        <button class="filter-pill" data-filter="completed" onclick="setFilter(this)">Completed</button>
+      </div>
+
+      <div class="task-list" id="taskList"></div>
+
+      <div class="stats-bar">
+        <div class="stat">
+          <div class="stat-num" id="statTotal">0</div>
+          <div class="stat-label">Total</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="statPending">0</div>
+          <div class="stat-label">Pending</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" id="statDone">0</div>
+          <div class="stat-label">Done</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="todo.js"></script>
+</body>
+</html>

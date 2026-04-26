@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusFlow — Schedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="schedule.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">Focus<span>Flow</span></div>
+    <div class="nav-tabs">
+      <!-- Each nav tab becomes a link -->
+<a class="nav-tab" href="todo.html">To-Do</a>
+<a class="nav-tab" href="pomodoro.html">Pomodoro</a>
+<a class="nav-tab" href="goals.html">Goals</a>
+<a class="nav-tab active" href="schedule.html">Schedule</a>
+    </div>
+    <div class="nav-right">
+      <span class="nav-date" id="navDate"></span>
+      <div class="nav-avatar">PA</div>
+    </div>
+  </nav>
+
+  <!-- APP SHELL -->
+  <div class="app">
+
+    <!-- SCHEDULE PANEL -->
+    <div class="schedule-panel">
+      <div class="schedule-header">
+        <div class="schedule-title" id="scheduleTitle">Today</div>
+        <div class="nav-arrows">
+          <button class="arrow-btn" id="prevDayBtn">‹</button>
+          <button class="arrow-btn" id="nextDayBtn">›</button>
+        </div>
+        <button class="today-btn" id="todayBtn">Today</button>
+        <div class="view-toggle">
+          <button class="view-btn active" id="dayBtn">Day</button>
+          <button class="view-btn" id="weekBtn">Week</button>
+        </div>
+      </div>
+
+      <div class="timeline-scroll" id="timelineScroll">
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </div>
+
+    <!-- AI PANEL -->
+    <div class="ai-panel">
+      <div class="ai-header">
+        <div class="ai-icon">✦</div>
+        <div class="ai-title">
+          AI Scheduler
+          <span>Powered by FocusFlow AI</span>
+        </div>
+        <div class="ai-status">
+          <div class="ai-dot"></div>
+          Online
+        </div>
+      </div>
+
+      <div class="ai-actions">
+        <button class="ai-quick-btn primary" id="autoPlanBtn">✦ Auto Plan My Day</button>
+        <button class="ai-quick-btn secondary" id="optimizeBtn">⚡ Optimize</button>
+        <button class="ai-quick-btn secondary" id="focusBtn">🎯 Focus</button>
+        <button class="ai-quick-btn secondary" id="conflictBtn">⚠ Check Conflicts</button>
+      </div>
+
+      <div class="ai-chat" id="aiChat"></div>
+
+      <div class="ai-input-area">
+        <div class="ai-input-row">
+          <textarea class="ai-input" id="aiInput" rows="1"
+            placeholder="Ask AI to plan, optimize, or reschedule…"></textarea>
+          <button class="voice-btn" id="voiceBtn" title="Voice input">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M10 1a3 3 0 00-3 3v6a3 3 0 006 0V4a3 3 0 00-3-3z"/>
+              <path d="M5 10a5 5 0 0010 0M10 17v2M8 19h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            </svg>
+          </button>
+          <button class="ai-send-btn" id="sendBtn">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M2 10l16-8-6 8 6 8z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="ai-chips">
+          <span class="ai-chip" data-msg="Plan my day">Plan my day</span>
+          <span class="ai-chip" data-msg="Add a 15-min break">Add break</span>
+          <span class="ai-chip" data-msg="Schedule deep work">Deep work block</span>
+          <span class="ai-chip" data-msg="What should I do next?">What's next?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT MODAL -->
+  <div class="modal-overlay" id="editModal">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">Edit Task</div>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Task Name</label>
+        <input class="form-input" id="editName" type="text">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Start Time</label>
+          <input class="form-input" id="editStart" type="time">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Duration (min)</label>
+          <input class="form-input" id="editDuration" type="number" min="15" step="15">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Priority</label>
+        <select class="form-select" id="editPriority">
+          <option value="p-high">🔴 High Priority</option>
+          <option value="p-med">🟠 Medium Priority</option>
+          <option value="p-low">🟢 Low Priority</option>
+          <option value="p-focus">🟣 Deep Focus</option>
+          <option value="p-break">🔵 Break</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-danger" id="deleteBtn">Delete</button>
+        <button class="btn-secondary" id="cancelBtn">Cancel</button>
+        <button class="btn-primary" id="saveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="schedule.js"></script>
+</body>
+</html>
