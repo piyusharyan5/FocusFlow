@@ -1,5 +1,5 @@
 /* =============================================
-   FocusFlow Pomodoro — app.js
+   FocusFlow Pomodoro — pomodoro.js
    Features: Timer, modes, sessions, dark mode,
              task editing, ring animation, pulse
    ============================================= */
@@ -200,7 +200,6 @@ function onSessionEnd() {
   }
 
   if (sessionsDone >= sessionsTotal) {
-    // All sessions complete — reset cycle
     motiveText.textContent = 'All sessions done! Fantastic work today.';
     sessionsDone  = 0;
     mode          = 'focus';
@@ -214,7 +213,6 @@ function onSessionEnd() {
   } else if (mode === 'focus') {
     motiveText.textContent = 'Nice work! Take a short break.';
   } else {
-    // Break ended — back to focus
     motiveText.textContent = 'Break over. Time to focus again!';
     mode          = 'focus';
     totalDuration = MODES.focus.duration;
@@ -227,14 +225,6 @@ function onSessionEnd() {
 
   updateDisplay();
   renderDots();
-}
-
-
-// ── NAVBAR NAVIGATION ──────────────────────────
-
-function setNav(el) {
-  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
 }
 
 
@@ -256,12 +246,10 @@ function saveTask() {
   closeModal();
 }
 
-// Close modal on backdrop click
 document.getElementById('modalOverlay').addEventListener('click', e => {
   if (e.target === document.getElementById('modalOverlay')) closeModal();
 });
 
-// Keyboard shortcuts in modal
 document.getElementById('taskInput').addEventListener('keydown', e => {
   if (e.key === 'Enter')  saveTask();
   if (e.key === 'Escape') closeModal();
@@ -283,3 +271,20 @@ ringProgress.setAttribute('stroke-dasharray',  CIRCUMFERENCE.toFixed(1));
 ringProgress.setAttribute('stroke-dashoffset', '0');
 updateDisplay();
 renderDots();
+
+// ✅ FIX: Wire up the actual play/pause button in the UI
+document.getElementById('mainBtn').addEventListener('click', toggleTimer);
+
+// ✅ FIX: Wire up reset and skip buttons
+document.getElementById('resetBtn').addEventListener('click', resetTimer);
+document.getElementById('skipBtn').addEventListener('click', skipSession);
+
+// ✅ FIX: Wire up mode tabs
+document.querySelectorAll('.mode-tab').forEach(tab => {
+  tab.addEventListener('click', () => switchMode(tab));
+});
+
+// ✅ FIX: Wire up task edit button
+document.getElementById('taskEditBtn').addEventListener('click', openModal);
+document.getElementById('modalCancelBtn').addEventListener('click', closeModal);
+document.getElementById('modalSaveBtn').addEventListener('click', saveTask);
